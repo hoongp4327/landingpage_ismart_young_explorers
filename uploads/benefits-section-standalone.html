@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iSMART Young Explorers – Benefits Section</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy-950: #082e64;
+        --navy-900: #123b78;
+        --brand-blue: #1d4d9b;
+        --orange: #ff641e;
+        --teal: #25a9b8;
+        --lime: #7dbb2d;
+        --yellow: #ffc52e;
+        --coral: #ff715f;
+        --paper: #fff9ee;
+        --white: #ffffff;
+        --font-heading: "Baloo 2", system-ui, sans-serif;
+        --font-body: "Be Vietnam Pro", system-ui, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--white);
+        background: var(--navy-950);
+        font-family: var(--font-body);
+        text-rendering: optimizeLegibility;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .benefits-section {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        padding: 74px 24px 86px;
+        background:
+          radial-gradient(circle at 48% 40%, #16559b 0%, var(--navy-900) 45%, var(--navy-950) 100%);
+        isolation: isolate;
+      }
+
+      .benefits-section::before,
+      .benefits-section::after {
+        position: absolute;
+        z-index: -1;
+        width: 280px;
+        height: 280px;
+        border: 2px solid rgb(255 255 255 / 8%);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .benefits-section::before {
+        top: -120px;
+        left: -100px;
+      }
+
+      .benefits-section::after {
+        right: -100px;
+        bottom: -130px;
+      }
+
+      .benefits-container {
+        width: min(100%, 1200px);
+        margin-inline: auto;
+      }
+
+      .benefits-heading {
+        max-width: 860px;
+        margin: 0 auto 42px;
+        text-align: center;
+      }
+
+      .benefits-eyebrow {
+        margin: 0 0 8px;
+        color: var(--orange);
+        font-family: var(--font-heading);
+        font-size: clamp(16px, 1.8vw, 21px);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .benefits-heading h2 {
+        margin: 0 0 12px;
+        font-family: var(--font-heading);
+        font-size: clamp(42px, 5.5vw, 68px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+      }
+
+      .benefits-heading > div {
+        max-width: 680px;
+        margin-inline: auto;
+        color: #dceafa;
+        font-size: clamp(15px, 1.5vw, 18px);
+        line-height: 1.65;
+      }
+
+      .benefits-canvas {
+        position: relative;
+        display: grid;
+        min-height: 690px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: repeat(8, 78px);
+        gap: 14px;
+      }
+
+      .benefit-note {
+        --accent: var(--teal);
+        position: relative;
+        z-index: 4;
+        align-self: center;
+        min-height: 148px;
+        padding: 30px 26px 27px;
+        color: var(--navy-900);
+        background-color: var(--paper);
+        background-image:
+          radial-gradient(circle at 20% 10%, rgb(255 197 46 / 8%), transparent 35%),
+          linear-gradient(rgb(18 59 120 / 2.5%) 1px, transparent 1px);
+        background-size: auto, 100% 24px;
+        border-right: 10px solid var(--accent);
+        box-shadow: 0 18px 40px rgb(2 20 49 / 28%);
+        clip-path: polygon(
+          1% 3%, 98% 0, 100% 90%, 95% 97%, 87% 94%, 77% 99%,
+          65% 95%, 53% 99%, 41% 96%, 30% 99%, 18% 95%, 5% 98%
+        );
+      }
+
+      .benefit-note h3 {
+        margin: 0;
+        font-family: var(--font-heading);
+        font-size: clamp(18px, 1.65vw, 23px);
+        font-weight: 700;
+        line-height: 1.27;
+      }
+
+      .benefit-number {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--accent);
+        font-family: var(--font-heading);
+        font-size: 38px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .benefit-icon {
+        position: absolute;
+        top: -24px;
+        left: -18px;
+        display: grid;
+        width: 58px;
+        height: 58px;
+        place-items: center;
+        color: var(--white);
+        background: var(--accent);
+        border: 5px solid var(--white);
+        border-radius: 50%;
+        box-shadow: 0 8px 18px rgb(0 0 0 / 18%);
+      }
+
+      .benefit-icon svg {
+        width: 25px;
+        height: 25px;
+        stroke-width: 2.2;
+      }
+
+      .note-01 {
+        grid-column: 1 / 4;
+        grid-row: 2 / 4;
+        transform: rotate(-2deg);
+      }
+
+      .note-02 {
+        --accent: var(--orange);
+        grid-column: 9 / 13;
+        grid-row: 1 / 3;
+        transform: rotate(1.5deg);
+      }
+
+      .note-03 {
+        --accent: var(--lime);
+        grid-column: 10 / 13;
+        grid-row: 4 / 6;
+        transform: rotate(-1deg);
+      }
+
+      .note-04 {
+        --accent: var(--yellow);
+        grid-column: 1 / 4;
+        grid-row: 5 / 7;
+        transform: rotate(1deg);
+      }
+
+      .note-05 {
+        --accent: var(--coral);
+        grid-column: 4 / 7;
+        grid-row: 7 / 9;
+        transform: rotate(-1deg);
+      }
+
+      .student-photo {
+        position: relative;
+        z-index: 3;
+        margin: 0;
+        padding: 10px 10px 38px;
+        overflow: visible;
+        background: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 20px 46px rgb(2 20 49 / 36%);
+      }
+
+      .student-photo img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        border-radius: 3px;
+        object-fit: cover;
+      }
+
+      .photo-01 {
+        grid-column: 4 / 8;
+        grid-row: 1 / 5;
+        transform: rotate(-3deg);
+      }
+
+      .photo-01 img {
+        object-position: 48% center;
+      }
+
+      .photo-02 {
+        grid-column: 6 / 10;
+        grid-row: 4 / 8;
+        transform: rotate(3deg);
+      }
+
+      .photo-tape {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        z-index: 6;
+        width: 108px;
+        height: 30px;
+        background: rgb(231 200 143 / 82%);
+        box-shadow: 0 3px 8px rgb(42 27 6 / 8%);
+        transform: translateX(-50%) rotate(2deg);
+      }
+
+      .benefit-connectors {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+
+      .benefit-connectors path {
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 8 10;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .connector-teal { stroke: var(--teal); }
+      .connector-orange { stroke: var(--orange); }
+      .connector-lime { stroke: var(--lime); }
+      .connector-yellow { stroke: var(--yellow); }
+      .connector-coral { stroke: var(--coral); }
+
+      .benefit-star {
+        position: absolute;
+        right: -22px;
+        bottom: -18px;
+        z-index: 7;
+        display: grid;
+        width: 66px;
+        height: 66px;
+        place-items: center;
+        color: #f5b600;
+        background: var(--white);
+        border-radius: 50%;
+        box-shadow: 0 10px 24px rgb(2 20 49 / 22%);
+      }
+
+      .benefit-star svg {
+        width: 34px;
+        height: 34px;
+        fill: currentColor;
+      }
+
+      .watermark {
+        position: absolute;
+        z-index: 0;
+        color: rgb(255 255 255 / 9%);
+        pointer-events: none;
+      }
+
+      .watermark-compass {
+        top: 42px;
+        left: -64px;
+      }
+
+      .watermark-compass svg {
+        width: 250px;
+        height: 250px;
+        stroke-width: 1;
+      }
+
+      .watermark-globe {
+        right: 24px;
+        bottom: 16px;
+      }
+
+      .watermark-globe svg {
+        width: 116px;
+        height: 116px;
+        stroke-width: 1;
+      }
+
+      @media (max-width: 1023px) {
+        .benefits-canvas {
+          min-height: auto;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: auto;
+          gap: 26px;
+        }
+
+        .student-photo,
+        .benefit-note {
+          grid-column: auto;
+          grid-row: auto;
+          transform: none;
+        }
+
+        .photo-01,
+        .photo-02 {
+          min-height: 360px;
+        }
+
+        .photo-01 {
+          order: 1;
+        }
+
+        .note-01 {
+          order: 2;
+        }
+
+        .note-02 {
+          order: 3;
+        }
+
+        .photo-02 {
+          order: 4;
+        }
+
+        .note-03 {
+          order: 5;
+        }
+
+        .note-04 {
+          order: 6;
+        }
+
+        .note-05 {
+          order: 7;
+          grid-column: 1 / -1;
+          width: min(100%, 520px);
+          justify-self: center;
+        }
+
+        .benefit-connectors {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .benefits-section {
+          padding: 58px 20px 68px;
+        }
+
+        .benefits-heading {
+          margin-bottom: 34px;
+        }
+
+        .benefits-heading h2 {
+          font-size: clamp(38px, 11vw, 50px);
+        }
+
+        .benefits-canvas {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .student-photo {
+          width: calc(100% - 10px);
+          min-height: 330px;
+          align-self: flex-start;
+        }
+
+        .photo-02 {
+          align-self: flex-end;
+        }
+
+        .benefit-note {
+          width: calc(100% - 12px);
+          min-height: 132px;
+          padding: 28px 22px 24px;
+        }
+
+        .benefit-note:nth-of-type(even) {
+          align-self: flex-end;
+        }
+
+        .note-05 {
+          width: calc(100% - 12px);
+        }
+
+        .benefit-icon {
+          left: -8px;
+        }
+
+        .watermark {
+          display: none;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .student-photo {
+          min-height: 280px;
+        }
+
+        .benefits-heading > div {
+          font-size: 14px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="benefits-section" id="benefits" aria-labelledby="benefits-title">
+      <div class="watermark watermark-compass" aria-hidden="true">
+        <i data-lucide="compass"></i>
+      </div>
+
+      <div class="watermark watermark-globe" aria-hidden="true">
+        <i data-lucide="globe-2"></i>
+      </div>
+
+      <div class="benefits-container">
+        <header class="benefits-heading">
+          <p class="benefits-eyebrow">Học để khám phá – Học để tự tin</p>
+          <h2 id="benefits-title">Con học được gì sau khóa học</h2>
+          <div>
+            Mỗi giờ học là một bước tiến vững chắc – giúp con làm chủ tiếng Anh,
+            mở rộng tư duy và sẵn sàng hội nhập quốc tế.
+          </div>
+        </header>
+
+        <div class="benefits-canvas">
+          <article class="benefit-note note-01">
+            <div class="benefit-icon" aria-hidden="true">
+              <i data-lucide="target"></i>
+            </div>
+            <span class="benefit-number">01</span>
+            <h3>Có lộ trình học rõ ràng, chuẩn đầu ra quốc tế</h3>
+          </article>
+
+          <figure class="student-photo photo-01">
+            <span class="photo-tape" aria-hidden="true"></span>
+            <img
+              src="assets/images/student-speaking-live.webp"
+              width="1586"
+              height="992"
+              alt="Học sinh tự tin giao tiếp với giáo viên tiếng Anh trực tuyến"
+            />
+          </figure>
+
+          <article class="benefit-note note-02">
+            <div class="benefit-icon" aria-hidden="true">
+              <i data-lucide="book-open"></i>
+            </div>
+            <span class="benefit-number">02</span>
+            <h3>Học theo giáo trình chuẩn quốc tế, phát triển năng lực toàn diện</h3>
+          </article>
+
+          <article class="benefit-note note-03">
+            <div class="benefit-icon" aria-hidden="true">
+              <i data-lucide="monitor-cog"></i>
+            </div>
+            <span class="benefit-number">03</span>
+            <h3>Sử dụng công nghệ AI &amp; hệ sinh thái số 24/7</h3>
+          </article>
+
+          <article class="benefit-note note-04">
+            <div class="benefit-icon" aria-hidden="true">
+              <i data-lucide="lightbulb"></i>
+            </div>
+            <span class="benefit-number">04</span>
+            <h3>Phát triển tư duy phản biện &amp; phản xạ chủ động</h3>
+          </article>
+
+          <figure class="student-photo photo-02">
+            <img
+              src="assets/images/students-problem-solving.webp"
+              width="1452"
+              height="1089"
+              loading="lazy"
+              alt="Hai học sinh cùng thảo luận và giải quyết bài tập tiếng Anh"
+            />
+            <span class="benefit-star" aria-hidden="true">
+              <i data-lucide="star"></i>
+            </span>
+          </figure>
+
+          <article class="benefit-note note-05">
+            <div class="benefit-icon" aria-hidden="true">
+              <i data-lucide="trophy"></i>
+            </div>
+            <span class="benefit-number">05</span>
+            <h3>Sẵn sàng chinh phục chứng chỉ quốc tế</h3>
+          </article>
+
+          <svg
+            class="benefit-connectors"
+            viewBox="0 0 1200 690"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#25a9b8"></path>
+              </marker>
+              <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff641e"></path>
+              </marker>
+              <marker id="arrow-lime" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dbb2d"></path>
+              </marker>
+              <marker id="arrow-yellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffc52e"></path>
+              </marker>
+              <marker id="arrow-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff715f"></path>
+              </marker>
+            </defs>
+
+            <path class="connector-teal" d="M250 210 C330 270 350 260 395 245" marker-end="url(#arrow-teal)"></path>
+            <path class="connector-orange" d="M745 210 C830 160 890 160 930 175" marker-end="url(#arrow-orange)"></path>
+            <path class="connector-lime" d="M835 465 C900 465 930 470 975 455" marker-end="url(#arrow-lime)"></path>
+            <path class="connector-yellow" d="M280 510 C345 500 375 540 415 585" marker-end="url(#arrow-yellow)"></path>
+            <path class="connector-coral" d="M555 590 C600 540 630 515 690 505" marker-end="url(#arrow-coral)"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script>
+      if (window.lucide) {
+        window.lucide.createIcons({ strokeWidth: 2 });
+      }
+    </script>
+  </body>
+</html>
