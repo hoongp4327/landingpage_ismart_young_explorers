@@ -107,21 +107,6 @@
   .ye-hero-title img { display: block; width: 100%; height: auto; filter: drop-shadow(0 10px 12px rgba(33,64,130,.16)); }
   .ye-hero-description { width: 100%; max-width: 590px; color: #33404F; font-family: "Open Sans", Calibri, Helvetica, sans-serif; font-size: clamp(14px, 1.22vw, 17.5px); font-weight: 600; line-height: 1.62; text-align: left; text-wrap: pretty; }
   .ye-hero-description-icon { display: none; }
-  .ye-hero-highlights { width: 100%; max-width: 590px; display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(12px, 1.7vw, 26px); }
-  .ye-hero-highlight { display: flex; align-items: center; gap: 9px; min-width: 0; font-family: Montserrat, Arial, sans-serif; text-align: left; }
-  .ye-hero-highlight .ye-hero-highlight-icon-wrap { flex: 0 0 auto; align-self: center; width: clamp(40px, 3.3vw, 50px); height: clamp(40px, 3.3vw, 50px); aspect-ratio: 1; display: grid; place-items: center; overflow: hidden; border-radius: 50%; box-shadow: 0 6px 14px rgba(33,64,130,.18); }
-  .ye-hero-highlight-icon { width: 100%; height: 100%; display: block; object-fit: contain; }
-  .ye-hero-highlight--cefr .ye-hero-highlight-icon { transform: scale(1.15); }
-  .ye-hero-highlight--live .ye-hero-highlight-icon { transform: scale(1.39); }
-  .ye-hero-highlight--eco .ye-hero-highlight-icon { transform: scale(1.10); }
-  .ye-hero-highlight strong { display: block; font-size: clamp(14px, 1.25vw, 19px); font-weight: 800; line-height: 1.1; white-space: nowrap; }
-  .ye-hero-highlight div span { display: block; margin-top: 2px; color: #6B7A8C; font-size: clamp(10px, .85vw, 12.5px); font-weight: 600; line-height: 1.22; }
-  .ye-hero-highlight--cefr strong { color: #1D6FD0; }
-  .ye-hero-highlight--cefr .ye-hero-highlight-icon-wrap { background: #1D6FD0; }
-  .ye-hero-highlight--live strong { color: #F2661F; }
-  .ye-hero-highlight--live .ye-hero-highlight-icon-wrap { background: #F2661F; }
-  .ye-hero-highlight--eco strong { color: #5F9236; }
-  .ye-hero-highlight--eco .ye-hero-highlight-icon-wrap { background: #6DA82F; }
   .ye-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 2px; animation: heroCtaFloat 4.8s ease-in-out infinite; }
   .ye-hero-cta { display: inline-flex; align-items: center; gap: 12px; padding: 15px 24px; border-radius: 14px; font-family: Montserrat, Arial, sans-serif; font-size: clamp(13px, 1.05vw, 16px); font-weight: 700; line-height: 1.15; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
   .ye-hero-cta .material-symbols-rounded { font-size: 20px; opacity: .8; }
@@ -149,12 +134,14 @@
     .ye-hero-media { display: flex; flex-direction: column; gap: 12px; }
     .ye-hero-visual { order: -1; }
   }
+  @media (max-width: 900px) {
+    .ye-hero-features { display: none; }
+  }
   @media (max-width: 820px) {
     .ye-hero-stage { min-height: 0; }
     .ye-hero-grid { grid-template-columns: 1fr; }
     .ye-hero-copy { align-items: center; text-align: center; }
     .ye-hero-description { text-align: center; }
-    .ye-hero-highlights { width: auto; flex-direction: column; align-items: flex-start; gap: 14px; }
     .ye-hero-accred { padding: 12px 16px; }
     .ye-hero-actions { justify-content: center; }
   }
@@ -217,21 +204,6 @@
           <div class="ye-hero-description">
             <span class="material-symbols-rounded ye-hero-description-icon" aria-hidden="true">play_arrow</span>
             <span>Chương trình tiếng Anh trực tuyến theo chuẩn đầu ra quốc tế giúp học sinh tiểu học xây dựng nền tảng tiếng Anh vững chắc, tự tin giao tiếp và sẵn sàng dẫn lối tương lai.</span>
-          </div>
-
-          <div class="ye-hero-highlights">
-            <div class="ye-hero-highlight ye-hero-highlight--cefr">
-              <span class="ye-hero-highlight-icon-wrap" aria-hidden="true"><img class="ye-hero-highlight-icon" src="uploads/icon-cefr.webp" decoding="async" alt=""></span>
-              <div><strong>CEFR</strong><span>Chuẩn đầu ra rõ ràng</span></div>
-            </div>
-            <div class="ye-hero-highlight ye-hero-highlight--live">
-              <span class="ye-hero-highlight-icon-wrap" aria-hidden="true"><img class="ye-hero-highlight-icon" src="uploads/icon-live.webp" decoding="async" alt=""></span>
-              <div><strong>Live</strong><span>Tương tác trực tuyến</span></div>
-            </div>
-            <div class="ye-hero-highlight ye-hero-highlight--eco">
-              <span class="ye-hero-highlight-icon-wrap" aria-hidden="true"><img class="ye-hero-highlight-icon" src="uploads/icon-247.webp" decoding="async" alt=""></span>
-              <div><strong>24/7</strong><span>Hệ sinh thái số</span></div>
-            </div>
           </div>
 
           <div class="ye-hero-actions">
@@ -1160,17 +1132,7 @@
       .outcomes-mascot { top: 14px; left: 5px; width: 68px; opacity: .96; }
       .teacher-mascot { top: 12px; right: 5px; width: 62px; }
 
-      .ye-hero-stage { height: 720px; aspect-ratio: auto; }
       .ye-hero-background { object-fit: cover; }
-      .ye-hero-title { top: 3.2%; left: 7%; width: 86%; }
-      .ye-hero-description { top: 25.5%; left: 7%; width: 86%; min-height: 0; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.28; }
-      .ye-hero-visual { top: 32%; right: 4%; width: 92%; }
-      .ye-hero-highlights { top: 76.5%; left: 7%; width: 86%; }
-      .ye-hero-highlight { padding: 0 4%; }
-      .ye-hero-highlight strong { font-size: 18px; }
-      .ye-hero-highlight span { margin-top: 4px; font-size: 10.5px; line-height: 1.2; }
-      .ye-hero-primary { top: 85%; left: 7%; width: 86%; }
-      .ye-hero-bubble { display: none; }
 
       .ye-trust { height: auto; padding: 26px 16px 28px; }
       .ye-trust-inner { height: auto; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px 8px; text-align: center; }
