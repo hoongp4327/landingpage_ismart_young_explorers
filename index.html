@@ -54,8 +54,49 @@
   .zalo-floating img { display: block; width: 100%; height: 100%; object-fit: contain; }
   .zalo-floating:hover { filter: drop-shadow(0 14px 22px rgba(0,84,190,.34)); }
   .zalo-floating:focus-visible { outline: 3px solid #F5A623; outline-offset: 4px; }
-  @media (max-width: 640px) {
-    .zalo-floating { right: 14px; bottom: 14px; width: 72px; height: 72px; border-radius: 22px; }
+  .mobile-cta-bar { display: none; }
+  @media (max-width: 900px) {
+    .mobile-cta-bar {
+      position: fixed;
+      z-index: 130;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    }
+    .mobile-cta-call {
+      flex: 0 0 auto;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #FFFFFF;
+      color: #1B3A6B;
+      box-shadow: 0 10px 22px rgba(6,31,72,.28);
+    }
+    .mobile-cta-call:hover { color: #E8501B; }
+    .mobile-cta-call .material-symbols-rounded { font-size: 26px; }
+    .mobile-cta-main {
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: #E03A1B;
+      color: #FFFFFF;
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      box-shadow: 0 10px 22px rgba(196,42,29,.34);
+    }
+    .mobile-cta-main:hover { color: #FFFFFF; }
+    .site-page { padding-bottom: 92px; }
+    .zalo-floating { right: 14px; bottom: 92px; width: 72px; height: 72px; border-radius: 22px; }
   }
   .ye-hero { position: relative; overflow: hidden; background: #01429A; }
   .ye-hero-stage { position: relative; width: 100%; min-height: min(760px, 50vw); margin: 0 auto; overflow: hidden; }
@@ -157,7 +198,7 @@
       </nav>
       <div class="site-header-actions" style="display: flex; align-items: center; gap: 18px; flex-shrink: 0;">
         <a href="tel:0967417895" style="font-size: 15px; font-weight: 700; color: #1B3A6B; white-space: nowrap;" style-hover="color: #E8501B;">Gọi tư vấn 0967417895</a>
-        <a href="#dang-ky" style="background: #E8501B; color: #FFFFFF; font-weight: 800; font-size: 15px; padding: 14px 26px; border-radius: 999px; white-space: nowrap;" style-hover="background: #1B3A6B; color: #FFFFFF;">Đánh giá miễn phí</a>
+        <a href="#dang-ky" style="background: #E8501B; color: #FFFFFF; font-weight: 800; font-size: 15px; padding: 14px 26px; border-radius: 999px; white-space: nowrap;" style-hover="background: #1B3A6B; color: #FFFFFF;">Đánh giá năng lực</a>
       </div>
       <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Mở menu điều hướng"><span></span><span></span><span></span></button>
     </div>
@@ -533,7 +574,7 @@
     #lo-trinh .ye-c4 { margin-bottom: 78px; color: #1B3A6B; }
     #lo-trinh .ye-card:hover { transform: translateY(-10px); }
     #lo-trinh .ye-tab { font-size: 15px; letter-spacing: .06em; padding: 8px 14px 11px; }
-    #lo-trinh .ye-step { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin: 6px 0 10px; }
+    #lo-trinh .ye-step { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin: 6px 0 16px; }
     #lo-trinh .ye-card__title { margin: 0; font-size: 27px; line-height: 1; letter-spacing: -.01em; }
     #lo-trinh .ye-card__title small { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 800; letter-spacing: .18em; color: #8C8577; }
     #lo-trinh .ye-bars { display: flex; align-items: flex-end; gap: 3px; height: 26px; flex: 0 0 auto; }
@@ -546,7 +587,6 @@
     #lo-trinh .ye-card.is-2 .ye-bars span:nth-child(-n+2),
     #lo-trinh .ye-card.is-3 .ye-bars span:nth-child(-n+3),
     #lo-trinh .ye-card.is-4 .ye-bars span:nth-child(-n+4) { opacity: 1; }
-    #lo-trinh .ye-card__meta { margin: 0 0 12px; font-size: 13.5px; color: #6B6455; }
     #lo-trinh .ye-photo { aspect-ratio: 5 / 3; }
     #lo-trinh .ye-io { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(120,95,55,.32); }
     #lo-trinh .ye-io div { flex: 1 1 0; min-width: 0; text-align: center; font-family: Montserrat, Arial, sans-serif; }
@@ -583,7 +623,6 @@
               <h3 class="ye-card__title"><small>Trình độ</small>PRE A1</h3>
               <div class="ye-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             </div>
-            <p class="ye-card__meta">56 buổi <i>•</i> 84 giờ</p>
             <div class="ye-photo"><img src="uploads/roadmap-1.jpg" alt="Học viên iLEAD 1"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>Beginner</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>A1</b></div></div>
           </article>
@@ -593,7 +632,6 @@
               <h3 class="ye-card__title"><small>Trình độ</small>A1</h3>
               <div class="ye-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             </div>
-            <p class="ye-card__meta">64 buổi <i>•</i> 96 giờ</p>
             <div class="ye-photo"><img src="uploads/roadmap-2.jpg" alt="Học viên iLEAD 2"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>Pre A1</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>A1</b></div></div>
           </article>
@@ -603,7 +641,6 @@
               <h3 class="ye-card__title"><small>Trình độ</small>A2</h3>
               <div class="ye-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             </div>
-            <p class="ye-card__meta">72 buổi <i>•</i> 108 giờ</p>
             <div class="ye-photo"><img src="uploads/roadmap-3.jpg" alt="Học viên iLEAD 3"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>A1</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>A2</b></div></div>
           </article>
@@ -613,7 +650,6 @@
               <h3 class="ye-card__title"><small>Trình độ</small>PRE B1</h3>
               <div class="ye-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             </div>
-            <p class="ye-card__meta">72 buổi <i>•</i> 108 giờ</p>
             <div class="ye-photo"><img src="uploads/roadmap-4.jpg" alt="Học viên iLEAD 4"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>A2</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>Pre B1</b></div></div>
           </article>
@@ -1096,10 +1132,8 @@
       .site-header-inner { position: relative; padding: 6px 16px; gap: 10px; }
       .site-header-logo { width: 68px; height: 50px; }
       .site-header-logo img { width: 66px; }
-      .site-header-actions { margin-left: auto; gap: 8px !important; }
-      .site-header-actions > a:first-child { display: none; }
-      .site-header-actions > a:last-child { padding: 10px 14px !important; font-size: 12px !important; }
-      .mobile-menu-toggle { width: 42px; height: 42px; padding: 10px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 0; border-radius: 12px; background: #EDF7FD; cursor: pointer; }
+      .site-header-actions { display: none !important; }
+      .mobile-menu-toggle { width: 42px; height: 42px; margin-left: auto; padding: 10px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 0; border-radius: 12px; background: #EDF7FD; cursor: pointer; }
       .mobile-menu-toggle span { display: block; width: 20px; height: 2px; border-radius: 999px; background: #1B3A6B; transition: transform .25s ease, opacity .2s ease; }
       .site-header.is-open .mobile-menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
       .site-header.is-open .mobile-menu-toggle span:nth-child(2) { opacity: 0; }
@@ -1267,6 +1301,13 @@
   <a class="zalo-floating" href="https://zalo.me/0967417895" target="_blank" rel="noopener noreferrer" aria-label="Liên hệ Zalo 0967 417 895" title="Zalo 0967.417.895">
     <img src="uploads/zalo-floating.png" alt="">
   </a>
+
+  <div class="mobile-cta-bar">
+    <a class="mobile-cta-call" href="tel:0967417895" aria-label="Gọi tư vấn 0967417895">
+      <span class="material-symbols-rounded" aria-hidden="true">call</span>
+    </a>
+    <a class="mobile-cta-main" href="#dang-ky">Đánh giá năng lực</a>
+  </div>
 
 </div>
 
