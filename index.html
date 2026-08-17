@@ -54,6 +54,28 @@
   .zalo-floating img { display: block; width: 100%; height: 100%; object-fit: contain; }
   .zalo-floating:hover { filter: drop-shadow(0 14px 22px rgba(0,84,190,.34)); }
   .zalo-floating:focus-visible { outline: 3px solid #F5A623; outline-offset: 4px; }
+  .young-form { margin-top: 42px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .young-form-field { display: flex; min-width: 0; flex-direction: column; gap: 9px; }
+  .young-form-field--full { grid-column: 1 / -1; }
+  .young-form-label { font-size: 14px; font-weight: 700; color: #1B3A6B; }
+  .young-form-control { width: 100%; min-height: 50px; border: none; border-bottom: 2px solid #E5E5E5; border-radius: 0; padding: 12px 2px; background: transparent; color: #1A1A1A; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+  textarea.young-form-control { min-height: 78px; resize: vertical; }
+  .young-form-control:focus { border-bottom-color: #E8501B; box-shadow: 0 2px 0 rgba(232,80,27,.12); }
+  .young-form-field[data-invalid] .young-form-control { border-bottom-color: #D93025; }
+  .young-field-error { display: none; color: #B3261E; font-size: 12px; font-weight: 600; line-height: 1.4; }
+  .young-form-field[data-invalid] .young-field-error { display: block; }
+  .young-form-actions { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 14px; }
+  .young-form-submit { border: none; border-radius: 999px; padding: 20px 44px; background: #E8501B; color: #FFFFFF; box-shadow: 0 16px 34px rgba(232,80,27,.32); cursor: pointer; font-family: Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 800; transition: background .2s ease, transform .2s ease, opacity .2s ease; }
+  .young-form-submit:hover { background: #1B3A6B; transform: translateY(-2px); }
+  .young-form-submit:disabled { cursor: wait; opacity: .68; transform: none; }
+  .young-form-message { margin: 0; color: #B3261E; font-size: 14px; font-weight: 700; text-align: center; }
+  .young-form-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; }
+  .young-form-done[hidden], .young-form-message[hidden] { display: none !important; }
+  @media (max-width: 640px) {
+    .young-form { grid-template-columns: 1fr; gap: 20px; }
+    .young-form-field--full, .young-form-actions { grid-column: auto; }
+    .young-form-submit { width: 100%; padding: 18px 24px; }
+  }
   .mobile-cta-bar { display: none; }
   @media (max-width: 900px) {
     .mobile-cta-bar {
@@ -1034,47 +1056,61 @@
         <p style="font-size: 15px; color: #999999; margin: 12px 0 0;">iSMART cam kết bảo mật thông tin của ba mẹ.</p>
       </div>
 
-      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-        <form onSubmit="{{ onSubmit }}" style="margin-top: 42px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Họ và tên phụ huynh *</span>
-            <input type="text" required="" placeholder="VD: Nguyễn Văn A" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Số điện thoại phụ huynh *</span>
-            <input type="tel" required="" placeholder="VD: 0901 234 567" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Họ và tên con</span>
-            <input type="text" placeholder="VD: Nguyễn Bảo An" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Lớp</span>
-            <input type="text" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Trường</span>
-            <input type="text" placeholder="VD: Tiểu học Nguyễn Du" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <label style="display: flex; flex-direction: column; gap: 9px;">
-            <span style="font-size: 14px; font-weight: 700; color: #1B3A6B;">Mục tiêu của con</span>
-            <input type="text" style="border: none; border-bottom: 2px solid #E5E5E5; padding: 14px 2px; background: transparent; color: #1A1A1A; outline: none;" style-focus="border-bottom-color: #E8501B;">
-          </label>
-          <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 14px;">
-            <button type="submit" style="background: #E8501B; color: #FFFFFF; border: none; font-family: Montserrat, Arial, sans-serif; font-weight: 800; font-size: 18px; padding: 20px 44px; border-radius: 999px; cursor: pointer; box-shadow: 0 16px 34px rgba(232,80,27,.32);" style-hover="background: #1B3A6B;">Gửi thông tin ngay →</button>
-            <span style="font-size: 14px; color: #999999; text-align: center; text-wrap: pretty;">Bằng việc gửi thông tin, ba mẹ đồng ý để iSMART liên hệ tư vấn chương trình.</span>
-          </div>
-        </form>
-      </sc-if>
-
-      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-        <div style="margin-top: 42px; text-align: center;">
-          <div style="width: 76px; height: 76px; border-radius: 50%; background: #7AB648; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 34px; margin: 0 auto;">✓</div>
-          <h3 style="font-family: Montserrat, Arial, sans-serif; font-weight: 800; font-size: clamp(24px, 2.6vw, 32px); color: #1B3A6B; margin: 24px 0 0;">Đã ghi nhận thông tin!</h3>
-          <p style="font-size: 17px; line-height: 1.75; color: #666666; margin: 14px auto 0; max-width: 34em; text-wrap: pretty;">Cảm ơn ba mẹ. Đội ngũ iSMART sẽ liên hệ để xác nhận và tư vấn lộ trình cho con.</p>
-          <button type="button" onClick="{{ onReset }}" style="margin-top: 28px; background: #FFFFFF; border: 2px solid #E8501B; color: #E8501B; font-family: Montserrat, Arial, sans-serif; font-weight: 800; font-size: 16px; padding: 15px 30px; border-radius: 999px; cursor: pointer;" style-hover="background: #E8501B; color: #FFFFFF;">Đăng ký cho học sinh khác</button>
+      <form id="youngExplorersForm" class="young-form" data-endpoint="https://script.google.com/macros/s/AKfycbyduw3BGH8STON0jhZn1Lkw7bUdk-0hCI2MPSMnQMldTFWLg2G_fuZDIpmhjSiTNaTPvQ/exec" novalidate>
+        <div class="young-form-honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
-      </sc-if>
+        <input id="youngRefCode" name="refCode" type="hidden" value="direct">
+        <input name="request" type="hidden" value="Đánh giá năng lực &amp; trải nghiệm miễn phí">
+
+        <label class="young-form-field">
+          <span class="young-form-label">Họ và tên phụ huynh *</span>
+          <input class="young-form-control" id="parentName" name="parentName" type="text" autocomplete="name" required aria-required="true" aria-describedby="parentNameError" placeholder="VD: Nguyễn Văn A">
+          <span class="young-field-error" id="parentNameError">Vui lòng nhập họ và tên phụ huynh.</span>
+        </label>
+        <label class="young-form-field">
+          <span class="young-form-label">Số điện thoại phụ huynh *</span>
+          <input class="young-form-control" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-required="true" aria-describedby="phoneError" placeholder="VD: 0901 234 567">
+          <span class="young-field-error" id="phoneError">Vui lòng nhập số điện thoại hợp lệ.</span>
+        </label>
+        <label class="young-form-field">
+          <span class="young-form-label">Họ và tên con</span>
+          <input class="young-form-control" id="childName" name="childName" type="text" autocomplete="off" placeholder="VD: Nguyễn Bảo An">
+        </label>
+        <label class="young-form-field">
+          <span class="young-form-label">Lớp</span>
+          <select class="young-form-control" id="grade" name="grade">
+            <option value="">-- Chọn lớp --</option>
+            <option value="1">Lớp 1</option>
+            <option value="2">Lớp 2</option>
+            <option value="3">Lớp 3</option>
+            <option value="4">Lớp 4</option>
+            <option value="5">Lớp 5</option>
+            <option value="khac">Khác</option>
+          </select>
+        </label>
+        <label class="young-form-field">
+          <span class="young-form-label">Trường</span>
+          <input class="young-form-control" id="school" name="school" type="text" autocomplete="organization" placeholder="VD: Tiểu học Nguyễn Du">
+        </label>
+        <label class="young-form-field young-form-field--full">
+          <span class="young-form-label">Mục tiêu của con</span>
+          <textarea class="young-form-control" id="goal" name="goal" rows="2" placeholder="VD: Tự tin giao tiếp, xây nền tảng cho chứng chỉ quốc tế..."></textarea>
+        </label>
+        <div class="young-form-actions">
+          <button class="young-form-submit" type="submit">Gửi thông tin ngay →</button>
+          <p class="young-form-message" id="youngFormMessage" role="alert" hidden></p>
+          <span style="font-size: 14px; color: #999999; text-align: center; text-wrap: pretty;">Bằng việc gửi thông tin, ba mẹ đồng ý để iSMART liên hệ tư vấn chương trình.</span>
+        </div>
+      </form>
+
+      <div class="young-form-done" id="youngFormDone" role="status" tabindex="-1" hidden style="margin-top: 42px; text-align: center;">
+        <div style="width: 76px; height: 76px; border-radius: 50%; background: #7AB648; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 34px; margin: 0 auto;">✓</div>
+        <h3 style="font-family: Montserrat, Arial, sans-serif; font-weight: 800; font-size: clamp(24px, 2.6vw, 32px); color: #1B3A6B; margin: 24px 0 0;">Đã ghi nhận thông tin!</h3>
+        <p style="font-size: 17px; line-height: 1.75; color: #666666; margin: 14px auto 0; max-width: 34em; text-wrap: pretty;">Cảm ơn ba mẹ. Đội ngũ iSMART sẽ liên hệ để xác nhận và tư vấn lộ trình cho con.</p>
+        <button id="youngFormReset" type="button" style="margin-top: 28px; background: #FFFFFF; border: 2px solid #E8501B; color: #E8501B; font-family: Montserrat, Arial, sans-serif; font-weight: 800; font-size: 16px; padding: 15px 30px; border-radius: 999px; cursor: pointer;">Đăng ký cho học sinh khác</button>
+      </div>
     </div>
   </section>
   </div>
@@ -1322,21 +1358,12 @@
       if (window.innerWidth > 900) closeMobileMenu();
     });
   })();
+
+  const youngFormScript = document.createElement('script');
+  youngFormScript.src = 'uploads/young-form.js?v=4';
+  document.head.appendChild(youngFormScript);
 </script>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{}">
-class Component extends DCLogic {
-  state = { submitted: false };
-  renderVals() {
-    return {
-      submitted: this.state.submitted,
-      notSubmitted: !this.state.submitted,
-      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
-      onReset: () => this.setState({ submitted: false })
-    };
-  }
-}
-</script>
 </body>
 </html>
