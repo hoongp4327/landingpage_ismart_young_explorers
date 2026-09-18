@@ -567,6 +567,13 @@
     #lo-trinh .ye-c3 { margin-bottom: 52px; color: #4AACCE; }
     #lo-trinh .ye-c4 { margin-bottom: 78px; color: #1B3A6B; }
     #lo-trinh .ye-card:hover { transform: translateY(-10px); }
+    #lo-trinh .ye-card { cursor: pointer; }
+    #lo-trinh .ye-card-link { position: absolute; inset: 0; z-index: 5; border-radius: inherit; }
+    #lo-trinh .ye-card-link:focus-visible { outline: 3px solid #F5A623; outline-offset: 3px; }
+    #lo-trinh .ye-card-more { display: block; margin-top: 12px; font-family: Montserrat, Arial, sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: currentColor; opacity: .85; transition: opacity .2s ease; }
+    #lo-trinh .ye-card-more i { font-style: normal; display: inline-block; transition: transform .2s ease; }
+    #lo-trinh .ye-card:hover .ye-card-more { opacity: 1; }
+    #lo-trinh .ye-card:hover .ye-card-more i { transform: translate(2px, -2px); }
     #lo-trinh .ye-tab { font-size: 15px; letter-spacing: .06em; padding: 8px 14px 11px; }
     #lo-trinh .ye-step { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin: 6px 0 16px; }
     #lo-trinh .ye-card__title { margin: 0; font-size: 27px; line-height: 1; letter-spacing: -.01em; }
@@ -612,6 +619,7 @@
         <div class="ye-trail" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="none"><path d="M40 128 C130 150 180 128 232 104M266 100 C350 120 400 100 470 82M508 80 C590 100 640 78 706 60M742 58 C820 76 870 52 940 34" fill="none" stroke="#E8501B" stroke-width="4" stroke-dasharray="11 11" stroke-linecap="round"/><path d="M470 82l-22 11 4-12-9-8zM706 60l-22 11 4-12-9-8zM940 34l-22 11 4-12-9-8z" fill="#E8501B"/></svg></div>
         <div class="ye-cards">
           <article class="ye-card ye-c1 is-1">
+            <a class="ye-card-link" href="https://drive.google.com/file/d/17LvlQh6FMVA7VMW8GHjrcMZ5_ZAvZEfk/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Xem chi tiết chương trình iLEAD 1 (mở tab mới)"></a>
             <span class="ye-tab">iLEAD 1</span>
             <div class="ye-step">
               <h3 class="ye-card__title"><small>Trình độ</small>PRE A1</h3>
@@ -619,8 +627,10 @@
             </div>
             <div class="ye-photo"><img src="uploads/roadmap-1.jpg" alt="Học viên iLEAD 1"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>Beginner</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>Pre A1</b></div></div>
+            <span class="ye-card-more" aria-hidden="true">Xem chi tiết chương trình <i>↗</i></span>
           </article>
           <article class="ye-card ye-c2 is-2">
+            <a class="ye-card-link" href="https://drive.google.com/file/d/1Mc3VW4nINeLbIARanK_jBVjtKdrQBQEb/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Xem chi tiết chương trình iLEAD 2 (mở tab mới)"></a>
             <span class="ye-tab">iLEAD 2</span>
             <div class="ye-step">
               <h3 class="ye-card__title"><small>Trình độ</small>A1</h3>
@@ -628,8 +638,10 @@
             </div>
             <div class="ye-photo"><img src="uploads/roadmap-2.jpg" alt="Học viên iLEAD 2"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>Pre A1</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>A1</b></div></div>
+            <span class="ye-card-more" aria-hidden="true">Xem chi tiết chương trình <i>↗</i></span>
           </article>
           <article class="ye-card ye-c3 is-3">
+            <a class="ye-card-link" href="https://drive.google.com/file/d/1BruOh2CVsvWbxaSD_8DBZThoe4JxFDOR/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Xem chi tiết chương trình iLEAD 3 (mở tab mới)"></a>
             <span class="ye-tab">iLEAD 3</span>
             <div class="ye-step">
               <h3 class="ye-card__title"><small>Trình độ</small>A2</h3>
@@ -637,8 +649,10 @@
             </div>
             <div class="ye-photo"><img src="uploads/roadmap-3.jpg" alt="Học viên iLEAD 3"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>A1</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>A2</b></div></div>
+            <span class="ye-card-more" aria-hidden="true">Xem chi tiết chương trình <i>↗</i></span>
           </article>
           <article class="ye-card ye-c4 is-4">
+            <a class="ye-card-link" href="https://drive.google.com/file/d/17LWmGZhV8hfZA0PWZQOqUNPV_tK85yiP/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Xem chi tiết chương trình iLEAD 4 (mở tab mới)"></a>
             <span class="ye-tab">iLEAD 4</span>
             <div class="ye-step">
               <h3 class="ye-card__title"><small>Trình độ</small>PRE B1</h3>
@@ -646,6 +660,7 @@
             </div>
             <div class="ye-photo"><img src="uploads/roadmap-4.jpg" alt="Học viên iLEAD 4"></div>
             <div class="ye-io"><div><small>Đầu vào</small><b>A2</b></div><span class="ye-io-arrow" aria-hidden="true">→</span><div class="ye-io-out"><small>Đầu ra</small><b>Pre B1</b></div></div>
+            <span class="ye-card-more" aria-hidden="true">Xem chi tiết chương trình <i>↗</i></span>
           </article>
         </div>
         <div class="ye-mascot"><img src="uploads/POSE-5.png" loading="lazy" decoding="async" alt=""></div>
