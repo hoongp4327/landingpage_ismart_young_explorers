@@ -54,7 +54,7 @@
         "emoji_events"
       ],
       "banner": {
-        "src": "uploads/ilead-banner-1.webp",
+        "src": "uploads/ilead-banner-1.png",
         "alt": "Bé gái đeo balo vàng, ôm cuốn sách và giơ ngón tay cái",
         "width": 1672,
         "height": 941
@@ -97,7 +97,7 @@
         "bar_chart"
       ],
       "banner": {
-        "src": "uploads/ilead-banner-2.webp",
+        "src": "uploads/ilead-banner-2.png",
         "alt": "Bé trai đeo balo, cầm cuốn sách tranh về các địa danh thế giới",
         "width": 1672,
         "height": 941
@@ -140,7 +140,7 @@
         "emoji_events"
       ],
       "banner": {
-        "src": "uploads/ilead-banner-3.webp",
+        "src": "uploads/ilead-banner-3.png",
         "alt": "Bé gái ôm cuốn sổ và cầm quả địa cầu, phía sau là máy bay và các địa danh thế giới",
         "width": 1672,
         "height": 941
@@ -183,7 +183,7 @@
         "emoji_events"
       ],
       "banner": {
-        "src": "uploads/ilead-banner-4.webp",
+        "src": "uploads/ilead-banner-4.png",
         "alt": "Nam sinh ôm sách, giơ tay quyết tâm bên cạnh tên lửa và hành tinh",
         "width": 1672,
         "height": 941
