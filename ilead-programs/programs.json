@@ -1,0 +1,193 @@
+{
+  "site": {
+    "url": "https://ilead-ismart.netlify.app/",
+    "brandName": "iSMART",
+    "phone": "0967417895"
+  },
+  "shared": {
+    "eyebrow": "Tiếng Anh tiểu học",
+    "subtitle": "Tiếng Anh tiểu học chuẩn đầu ra quốc tế",
+    "outcomeLabel": "Đầu ra tham chiếu:",
+    "frameworkLabel": "CEFR",
+    "topicsHeading": "Con sẽ học gì?",
+    "benefitsHeading": "Con nhận được gì?",
+    "audienceHeading": "Phù hợp với",
+    "ctaLabel": "Đăng ký đánh giá đầu vào miễn phí",
+    "backLabel": "Quay lại lộ trình học",
+    "finalHeading": "Sẵn sàng cho bước khởi đầu của con?"
+  },
+  "programs": [
+    {
+      "slug": "ilead-1",
+      "order": 1,
+      "name": "iLEAD 1",
+      "referenceOutcome": "Pre-A1",
+      "tagline": "Khởi đầu tự tin – yêu tiếng Anh từ những bước đầu tiên",
+      "topics": [
+        "Chữ cái, số, màu sắc & hình khối",
+        "Trường học & đồ dùng quen thuộc",
+        "Bạn bè, gia đình & cơ thể",
+        "Quần áo, đồ vật quanh em",
+        "Thức ăn, ngôi nhà & sinh hoạt",
+        "Ngoài trời, nông trại & thế giới quanh em"
+      ],
+      "benefits": [
+        "Làm quen tiếng Anh tự nhiên qua chủ đề gần gũi",
+        "Xây vốn từ vựng và mẫu câu nền tảng",
+        "Nghe – nói phản xạ tốt hơn qua hoạt động tương tác",
+        "Tự tin bước vào lộ trình tiếng Anh quốc tế"
+      ],
+      "audience": "Học sinh tiểu học mới bắt đầu hoặc cần củng cố nền tảng tiếng Anh.",
+      "accent": "#E8501B",
+      "topicIcons": [
+        "abc",
+        "backpack",
+        "family_restroom",
+        "checkroom",
+        "home",
+        "park"
+      ],
+      "benefitIcons": [
+        "spa",
+        "bar_chart",
+        "forum",
+        "emoji_events"
+      ],
+      "banner": {
+        "src": "uploads/ilead-banner-1.webp",
+        "alt": "Bé gái đeo balo vàng, ôm cuốn sách và giơ ngón tay cái",
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "slug": "ilead-2",
+      "order": 2,
+      "name": "iLEAD 2",
+      "referenceOutcome": "A1",
+      "tagline": "Mở rộng tự tin – con bắt đầu giao tiếp bằng tiếng Anh mỗi ngày",
+      "topics": [
+        "Trường học & thời gian biểu",
+        "Bữa ăn & đồ ăn",
+        "Động vật & thiên nhiên",
+        "Sở thích, tài năng & bạn bè",
+        "Nhà ở, thành phố & địa điểm quanh em",
+        "Cuối tuần, lịch hằng ngày & những chuyến đi"
+      ],
+      "benefits": [
+        "Mở rộng từ vựng và mẫu câu theo chủ đề quen thuộc",
+        "Tự tin nghe – nói về cuộc sống hằng ngày",
+        "Tăng phản xạ qua hoạt động tương tác",
+        "Sẵn sàng tiến tới các cấp độ cao hơn"
+      ],
+      "audience": "Học sinh tiểu học đã có nền tảng cơ bản và cần phát triển giao tiếp A1.",
+      "accent": "#5F9236",
+      "topicIcons": [
+        "schedule",
+        "restaurant",
+        "pets",
+        "sports_soccer",
+        "location_city",
+        "luggage"
+      ],
+      "benefitIcons": [
+        "spa",
+        "forum",
+        "groups",
+        "bar_chart"
+      ],
+      "banner": {
+        "src": "uploads/ilead-banner-2.webp",
+        "alt": "Bé trai đeo balo, cầm cuốn sách tranh về các địa danh thế giới",
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "slug": "ilead-3",
+      "order": 3,
+      "name": "iLEAD 3",
+      "referenceOutcome": "A2",
+      "tagline": "Giao tiếp tự tin – con dùng tiếng Anh linh hoạt hơn trong học tập và đời sống",
+      "topics": [
+        "Cuộc sống bận rộn & khám phá thế giới",
+        "Sức khỏe & cuộc sống trong bếp",
+        "Gia đình, trường học & cộng đồng",
+        "Lịch sử, địa danh & điểm hấp dẫn",
+        "Động vật, cây cối & thiên nhiên",
+        "Hoạt động ở nhà & du lịch tương lai"
+      ],
+      "benefits": [
+        "Mở rộng vốn từ và cấu trúc theo ngữ cảnh thực tế",
+        "Tăng khả năng nghe – nói – đọc – viết ở mức A2",
+        "Biết diễn đạt rõ hơn về trải nghiệm và ý tưởng",
+        "Tạo đà tiến tới chặng Pre-B1"
+      ],
+      "audience": "Học sinh tiểu học cuối cấp hoặc học sinh cần đạt nền tảng A2 vững vàng.",
+      "accent": "#2C8FB3",
+      "topicIcons": [
+        "travel_explore",
+        "nutrition",
+        "diversity_3",
+        "castle",
+        "forest",
+        "flight_takeoff"
+      ],
+      "benefitIcons": [
+        "spa",
+        "bar_chart",
+        "forum",
+        "emoji_events"
+      ],
+      "banner": {
+        "src": "uploads/ilead-banner-3.webp",
+        "alt": "Bé gái ôm cuốn sổ và cầm quả địa cầu, phía sau là máy bay và các địa danh thế giới",
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "slug": "ilead-4",
+      "order": 4,
+      "name": "iLEAD 4",
+      "referenceOutcome": "Pre-B1",
+      "tagline": "Bứt phá vươn xa – con sẵn sàng cho chặng tiếng Anh cao hơn",
+      "topics": [
+        "Âm nhạc, trò chơi & kết nối",
+        "Sức khỏe & cơ thể",
+        "Phiêu lưu, sân khấu & trải nghiệm",
+        "Thành phố, nông thôn & du lịch",
+        "Mùa trong năm & môi trường",
+        "Ẩm thực thế giới & khám phá không gian"
+      ],
+      "benefits": [
+        "Phát triển tư duy sử dụng tiếng Anh độc lập hơn",
+        "Mở rộng vốn từ và cấu trúc học thuật nền tảng",
+        "Tự tin trình bày ý kiến và kể lại trải nghiệm",
+        "Sẵn sàng chuyển tiếp lên lộ trình THCS"
+      ],
+      "audience": "Học sinh tiểu học cần bứt phá trước khi bước vào giai đoạn học cao hơn.",
+      "accent": "#1B3A6B",
+      "topicIcons": [
+        "music_note",
+        "fitness_center",
+        "theater_comedy",
+        "holiday_village",
+        "eco",
+        "rocket_launch"
+      ],
+      "benefitIcons": [
+        "spa",
+        "bar_chart",
+        "forum",
+        "emoji_events"
+      ],
+      "banner": {
+        "src": "uploads/ilead-banner-4.webp",
+        "alt": "Nam sinh ôm sách, giơ tay quyết tâm bên cạnh tên lửa và hành tinh",
+        "width": 1672,
+        "height": 941
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<section class="lp-hero" aria-labelledby="lp-title">
+  <img class="lp-hero-banner" src="{{root}}{{banner.src}}" width="{{banner.width}}" height="{{banner.height}}" alt="{{banner.alt}}" fetchpriority="high" decoding="async">
+  <div class="lp-container lp-hero-inner">
+    <a class="lp-back" href="{{root}}#lo-trinh" data-ilead-back>
+      <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>{{shared.backLabel}}
+    </a>
+    <div class="lp-hero-copy">
+      <p class="lp-eyebrow">{{shared.eyebrow}}</p>
+      <h1 id="lp-title" class="lp-title">{{{nameHtml}}}</h1>
+      <p class="lp-subtitle">{{shared.subtitle}}</p>
+      <p class="lp-badge">{{shared.outcomeLabel}} <strong>{{referenceOutcome}}</strong> <span aria-hidden="true">|</span> {{shared.frameworkLabel}}</p>
+      <p class="lp-tagline"><span class="lp-tagline-lead">{{taglineLead}}</span>{{#if taglineRest}}<span class="lp-sr"> – </span><span class="lp-tagline-rest">{{taglineRest}}</span>{{/if}}</p>
+      <a class="lp-cta" href="{{root}}#dang-ky" data-ilead-cta>
+        {{shared.ctaLabel}}<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="lp-section lp-topics" aria-labelledby="lp-topics-title">
+  <div class="lp-container">
+    <h2 id="lp-topics-title" class="lp-section-title">{{shared.topicsHeading}}</h2>
+    <span class="lp-title-deco lp-title-deco--book" aria-hidden="true"><span class="material-symbols-rounded">menu_book</span></span>
+    <ol class="lp-topic-grid">
+      {{#each topicItems}}
+      <li class="lp-topic">
+        <span class="lp-topic-icon lp-tone-{{this.tone}}" aria-hidden="true"><span class="material-symbols-rounded">{{this.icon}}</span></span>
+        <span class="lp-topic-text">{{this.text}}</span>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>
+
+<section class="lp-section lp-benefits" aria-labelledby="lp-benefits-title">
+  <div class="lp-container">
+    <h2 id="lp-benefits-title" class="lp-section-title">{{shared.benefitsHeading}}</h2>
+    <span class="lp-title-deco" aria-hidden="true"></span>
+    <ul class="lp-benefit-grid">
+      {{#each benefitItems}}
+      <li class="lp-benefit">
+        <span class="lp-benefit-icon lp-benefit-icon--{{@num}}" aria-hidden="true"><span class="material-symbols-rounded">{{this.icon}}</span></span>
+        <span class="lp-benefit-text">{{this.text}}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section class="lp-audience" aria-labelledby="lp-audience-title">
+  <div class="lp-container">
+    <div class="lp-audience-box">
+      <span class="lp-audience-icon" aria-hidden="true"><span class="material-symbols-rounded">groups</span></span>
+      <div class="lp-audience-body">
+        <h2 id="lp-audience-title" class="lp-audience-title">{{shared.audienceHeading}}</h2>
+        <p class="lp-audience-text">{{audience}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp-final" aria-labelledby="lp-final-title">
+  <div class="lp-container">
+    <div class="lp-final-box">
+      <span class="lp-final-star lp-final-star--left" aria-hidden="true"></span>
+      <span class="lp-final-star lp-final-star--right" aria-hidden="true"></span>
+      <h2 id="lp-final-title" class="lp-final-title">{{shared.finalHeading}}</h2>
+      <a class="lp-cta" href="{{root}}#dang-ky" data-ilead-cta>
+        {{shared.ctaLabel}}<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+      </a>
+      <a class="lp-final-back" href="{{root}}#lo-trinh" data-ilead-back>
+        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>{{shared.backLabel}}
+      </a>
+    </div>
+  </div>
+</section>

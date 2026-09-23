@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi" data-ilead-page="{{page}}" data-ilead-root="{{root}}"{{{htmlAttrs}}}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{{baseTag}}}
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{{{headMeta}}}
+<link rel="icon" href="{{root}}uploads/ismart-2026-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="{{{iconFontUrl}}}" rel="stylesheet">
+<link href="{{root}}uploads/ilead-program.css?v={{assetVersion}}" rel="stylesheet">
+<script src="{{root}}uploads/ilead-nav.js?v={{assetVersion}}" defer></script>
+</head>
+<body>
+<a class="lp-skip" href="#noi-dung">Bỏ qua đến nội dung chính</a>
+
+<header class="lp-header">
+  <div class="lp-header-inner">
+    <a class="lp-header-logo" href="{{root}}" aria-label="iSMART Young Explorers – Trang chủ">
+      <img src="{{root}}uploads/ismart-2026-logo.png" width="400" height="287" alt="iSMART Transforming Education — A member of EQuest Education">
+    </a>
+    <nav class="lp-nav" aria-label="Điều hướng chính">
+      <a href="{{root}}#gia-tri">Giá trị cho con</a>
+      <a href="{{root}}#lo-trinh">Lộ trình học</a>
+      <a href="{{root}}#giao-vien">Giáo viên</a>
+      <a href="{{root}}#trai-nghiem">Trải nghiệm học</a>
+    </nav>
+    <a class="lp-header-cta" href="{{root}}#dang-ky" data-ilead-cta>
+      Đánh giá năng lực<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+    </a>
+  </div>
+</header>
+
+<main id="noi-dung" class="lp-main" tabindex="-1">
+{{{content}}}
+</main>
+
+<footer class="lp-footer">
+  <a class="lp-footer-logo" href="{{root}}" aria-label="iSMART Young Explorers – Trang chủ">
+    <img src="{{root}}uploads/ismart-2026-logo.png" width="400" height="287" loading="lazy" alt="iSMART Transforming Education — A member of EQuest Education">
+  </a>
+  <p class="lp-footer-contact">Hotline: <a href="tel:{{site.phone}}">{{site.phone}}</a> · <a href="https://ismart.edu.vn">ismart.edu.vn</a></p>
+  <p class="lp-footer-copy">© 2026 iSMART Education</p>
+</footer>
+</body>
+</html>
