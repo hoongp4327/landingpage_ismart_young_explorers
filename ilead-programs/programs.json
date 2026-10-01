@@ -14,7 +14,12 @@
     "audienceHeading": "Phù hợp với",
     "ctaLabel": "Đăng ký đánh giá đầu vào miễn phí",
     "backLabel": "Quay lại lộ trình học",
-    "finalHeading": "Sẵn sàng cho bước khởi đầu của con?"
+    "finalHeading": "Sẵn sàng cho bước khởi đầu của con?",
+    "durationEyebrow": "Thời lượng khoá học",
+    "schedule": {
+      "minutesPerSession": 90,
+      "sessionsPerWeek": 2
+    }
   },
   "programs": [
     {
@@ -38,6 +43,7 @@
         "Tự tin bước vào lộ trình tiếng Anh quốc tế"
       ],
       "audience": "Học sinh tiểu học mới bắt đầu hoặc cần củng cố nền tảng tiếng Anh.",
+      "sessions": 60,
       "accent": "#E8501B",
       "topicIcons": [
         "abc",
@@ -81,6 +87,7 @@
         "Sẵn sàng tiến tới các cấp độ cao hơn"
       ],
       "audience": "Học sinh tiểu học đã có nền tảng cơ bản và cần phát triển giao tiếp A1.",
+      "sessions": 68,
       "accent": "#5F9236",
       "topicIcons": [
         "schedule",
@@ -124,6 +131,7 @@
         "Tạo đà tiến tới chặng Pre-B1"
       ],
       "audience": "Học sinh tiểu học cuối cấp hoặc học sinh cần đạt nền tảng A2 vững vàng.",
+      "sessions": 80,
       "accent": "#2C8FB3",
       "topicIcons": [
         "travel_explore",
@@ -167,6 +175,7 @@
         "Sẵn sàng chuyển tiếp lên lộ trình THCS"
       ],
       "audience": "Học sinh tiểu học cần bứt phá trước khi bước vào giai đoạn học cao hơn.",
+      "sessions": 80,
       "accent": "#1B3A6B",
       "topicIcons": [
         "music_note",

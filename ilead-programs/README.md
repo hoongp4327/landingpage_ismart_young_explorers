@@ -9,6 +9,8 @@ nguồn dữ liệu và một bộ template. Không sửa trực tiếp các fil
 |---|---|
 | Chủ đề, quyền lợi, thông điệp, đầu ra, đối tượng, ảnh của một cấp độ | `programs.json` → `programs[]` |
 | Nhãn dùng chung (tiêu đề phần, CTA, nút quay lại…) | `programs.json` → `shared` |
+| Số buổi học của một cấp độ (phần "Thời lượng khoá học") | `programs.json` → `programs[].sessions` |
+| Số phút / buổi, số buổi / tuần (chung cho mọi cấp độ) | `programs.json` → `shared.schedule` |
 | Tên miền dùng cho canonical / og:url | `programs.json` → `site.url` |
 | Bố cục một trang chương trình | `templates/program.html` |
 | Header / footer của các trang chi tiết và 404 | `templates/layout.html` |
