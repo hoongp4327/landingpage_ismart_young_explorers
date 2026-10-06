@@ -151,7 +151,7 @@ function buildPages(data) {
   for (const program of programs) {
     const root = '../../';
     const canonical = new URL(`chuong-trinh/${program.slug}/`, data.site.url).href;
-    const title = `${program.name} – Tiếng Anh tiểu học ${program.referenceOutcome} | ${data.site.brandName}`;
+    const title = `${data.site.brandName} | ${program.name} – Tiếng Anh tiểu học ${program.referenceOutcome}`;
     const description = `${program.tagline}. Phù hợp với ${lowerFirst(program.audience)}`;
     // "iLEAD 1" -> brand word and level number styled separately, as in the design.
     const numbered = /^(.*?)\s+(\d+)$/.exec(program.name);
@@ -200,7 +200,7 @@ function buildPages(data) {
     page: 'not-found',
     htmlAttrs: '',
     baseTag: NOT_FOUND_BASE_SCRIPT,
-    title: `Không tìm thấy trang | ${data.site.brandName}`,
+    title: `${data.site.brandName} | Không tìm thấy trang`,
     description: 'Trang bạn tìm không tồn tại hoặc đã được đổi địa chỉ.',
     headMeta: '<meta name="robots" content="noindex">',
     assetVersion: version,
