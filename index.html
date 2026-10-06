@@ -7,6 +7,7 @@
 <meta name="description" content="Chương trình tiếng Anh trực tuyến theo chuẩn đầu ra quốc tế dành cho học sinh tiểu học.">
 <script src="./support.js"></script>
 <script src="uploads/ilead-nav.js?v=93566d62" defer></script>
+<script src="uploads/teachers-strip.js?v=2" defer></script>
 </head>
 <body>
 <x-dc>
@@ -938,6 +939,200 @@
     .teacher-card--green { --teacher-accent:#79BA37; }
   </style>
 
+  <style>
+    /* Dải "Giáo viên tiêu biểu" — chuyển từ gói iPASS/section-giao-vien; JS ở uploads/teachers-strip.js */
+    .teachers, .teachers *, .teachers *::before, .teachers *::after { box-sizing: border-box; }
+    .teachers {
+      --gv-card: #FFFFFF; --gv-line: #D8E9F6; --gv-navy: #1B3A6B; --gv-orange: #E8501B; --gv-muted: #5B6478;
+      --gv-gap: clamp(14px, 1.6vw, 22px);
+      margin-top: clamp(40px, 4.4vw, 60px);
+    }
+    .teachers .tcard__name, .teachers__more a { font-family: Montserrat, Arial, sans-serif; }
+    .teachers__label { font-family: Montserrat, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .teachers__label{
+      margin: 0 0 clamp(16px, 1.8vw, 24px);
+      color: var(--gv-muted);
+      font-size: clamp(14px, 1.16vw, 16px);
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .teachers__viewport{
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+    
+    }
+    .teachers__viewport::-webkit-scrollbar{ display: none; }
+    
+    @supports (mask-image: linear-gradient(90deg, #000, #000)){
+      .teachers__viewport{
+        mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+      }
+    }
+    
+    .teachers__track{
+      display: flex;
+      gap: var(--gv-gap);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .teachers__item{
+      flex: 0 0 calc((100% - 3 * var(--gv-gap)) / 4);
+    }
+    
+    .tcard{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border: 1px solid var(--gv-line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--gv-card);
+      color: inherit;
+      text-decoration: none;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .tcard:hover{
+      border-color: var(--gv-orange);
+      transform: translateY(-3px);
+    }
+    
+    .tcard__media{
+      position: relative;
+      display: block;
+      aspect-ratio: 1;
+      background: var(--gv-orange);
+    }
+    
+    .tcard__photo{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .tcard__go{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .92);
+      color: var(--gv-orange);
+      transition: background-color .2s ease, color .2s ease;
+    }
+    .tcard__go svg{
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+    .tcard:hover .tcard__go{
+      background: var(--gv-orange);
+      color: #fff;
+    }
+    
+    .tcard__body{
+      display: block;
+      padding: clamp(14px, 1.5vw, 20px) clamp(14px, 1.4vw, 18px) clamp(16px, 1.8vw, 22px);
+      text-align: left;
+    }
+    
+    .tcard__name{
+      display: block;
+      color: var(--gv-navy);
+      font-size: clamp(14px, 1.18vw, 17px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    
+    .tcard__degree{
+      display: block;
+      margin-top: 8px;
+      color: var(--gv-orange);
+      font-size: clamp(12.5px, 1.02vw, 14.5px);
+      font-weight: 700;
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+    
+    .tcard__school{
+      display: block;
+      margin-top: 5px;
+      color: var(--gv-muted);
+      font-size: clamp(12px, .95vw, 13.5px);
+      font-weight: 500;
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+    
+    .teachers__more{
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(22px, 2.4vw, 34px);
+    }
+    
+    .teachers__more a{
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 34px;
+      border-radius: 999px;
+      background: var(--gv-orange);
+      color: #fff;
+      font-size: clamp(14px, 1.15vw, 17px);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(255, 72, 0, .26);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .teachers__more a:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(255, 72, 0, .34);
+    }
+    .teachers__more svg{
+      width: 1.1em;
+      height: 1.1em;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+    
+    @media (max-width: 1023px){
+      .teachers__item{ flex-basis: calc((100% - 2 * var(--gv-gap)) / 3); }
+    }
+    
+    @media (max-width: 767px){
+    
+      .teachers__item{ flex-basis: calc((100% - var(--gv-gap)) / 1.75); }
+    }
+    
+    @media (max-width: 420px){
+      .teachers__item{ flex-basis: 78%; }
+    }
+    
+    @media (prefers-reduced-motion: reduce){
+      .tcard,
+      .tcard__go,
+      .teachers__more a{ transition: none; }
+    
+      .tcard:hover,
+      .teachers__more a:hover{ transform: none; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) { .teachers__item[data-clone] { display: none; } }
+  </style>
+
   <section id="giao-vien" class="teacher-section">
     <img class="section-mascot teacher-mascot" src="uploads/mascot-pose-6.png" loading="lazy" alt="" aria-hidden="true">
     <div class="teacher-inner">
@@ -960,6 +1155,359 @@
           <h3>Giáo viên nước ngoài và giáo viên Việt Nam trình độ cử nhân</h3>
           <span class="teacher-card-label">giáo viên</span>
         </article>
+      </div>
+      <div class="teachers" id="giao-vien-tieu-bieu">
+        <p class="teachers__label">Giáo viên tiêu biểu</p>
+        <div class="teachers__viewport">
+          <ul class="teachers__track">
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/nguyen-thi-tuyet-nhung.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Nguyễn Thị Tuyết Nhung">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Nguyễn Thị Tuyết Nhung</span>
+            <span class="tcard__degree">Thạc sĩ Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/vu-huong-thao.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Vũ Hương Thảo">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Vũ Hương Thảo</span>
+            <span class="tcard__degree">Thạc sĩ Ngôn ngữ Anh</span>
+            <span class="tcard__school">Trường Đại học Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/do-thi-tham.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Đỗ Thị Thắm">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Đỗ Thị Thắm</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/kieu-kim-anh.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Kiều Kim Anh">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Kiều Kim Anh</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/tran-khuong-duy.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Trần Khương Duy">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Trần Khương Duy</span>
+            <span class="tcard__degree">Cử nhân Sư phạm tiếng Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/le-thi-anh-tuyet.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Lê Thị Ánh Tuyết">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Lê Thị Ánh Tuyết</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Sư phạm Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/dinh-thi-nga.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Đinh Thị Nga">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Đinh Thị Nga</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/nguyen-phuong-dung.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Nguyễn Phương Dung">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Nguyễn Phương Dung</span>
+            <span class="tcard__degree">Cử nhân Ngôn ngữ Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/duchesne-t-laurente.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Duchesne T. Laurente">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Duchesne T. Laurente</span>
+            <span class="tcard__degree">Cử nhân Elementary Education</span>
+            <span class="tcard__school">Negros Oriental State University</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item">
+            <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/katreena-sumicad.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Katreena Sumicad">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Katreena Sumicad</span>
+            <span class="tcard__degree">Cử nhân Business Administration, major in Finance and Marketing</span>
+            <span class="tcard__school">Xavier University – Ateneo de Cagayan</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/nguyen-thi-tuyet-nhung.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Nguyễn Thị Tuyết Nhung">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Nguyễn Thị Tuyết Nhung</span>
+            <span class="tcard__degree">Thạc sĩ Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/vu-huong-thao.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Vũ Hương Thảo">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Vũ Hương Thảo</span>
+            <span class="tcard__degree">Thạc sĩ Ngôn ngữ Anh</span>
+            <span class="tcard__school">Trường Đại học Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/do-thi-tham.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Đỗ Thị Thắm">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Đỗ Thị Thắm</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/kieu-kim-anh.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Kiều Kim Anh">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Kiều Kim Anh</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/tran-khuong-duy.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Trần Khương Duy">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Trần Khương Duy</span>
+            <span class="tcard__degree">Cử nhân Sư phạm tiếng Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/le-thi-anh-tuyet.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Lê Thị Ánh Tuyết">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Lê Thị Ánh Tuyết</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Sư phạm Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/dinh-thi-nga.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Đinh Thị Nga">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Đinh Thị Nga</span>
+            <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/nguyen-phuong-dung.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Nguyễn Phương Dung">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Nguyễn Phương Dung</span>
+            <span class="tcard__degree">Cử nhân Ngôn ngữ Anh</span>
+            <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/duchesne-t-laurente.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Duchesne T. Laurente">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Duchesne T. Laurente</span>
+            <span class="tcard__degree">Cử nhân Elementary Education</span>
+            <span class="tcard__school">Negros Oriental State University</span>
+            </span>
+            </a>
+            </li>
+            <li class="teachers__item" data-clone aria-hidden="true">
+            <a class="tcard" tabindex="-1" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+            <span class="tcard__media">
+            <img class="tcard__photo" src="uploads/teachers/katreena-sumicad.webp"
+            width="600" height="600" loading="lazy" decoding="async"
+            alt="Chân dung giáo viên Katreena Sumicad">
+            <span class="tcard__go" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            </span>
+            <span class="tcard__body">
+            <span class="tcard__name">Katreena Sumicad</span>
+            <span class="tcard__degree">Cử nhân Business Administration, major in Finance and Marketing</span>
+            <span class="tcard__school">Xavier University – Ateneo de Cagayan</span>
+            </span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        <div class="teachers__more">
+        <a href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+        Khám phá đội ngũ giáo viên
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        </div>
       </div>
     </div>
   </section>
